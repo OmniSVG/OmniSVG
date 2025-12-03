@@ -202,14 +202,13 @@ We provide **MMSVGBench** for standardized evaluation of SVG generation models.
 huggingface-cli download OmniSVG/MMSVGBench --repo-type dataset --local-dir /PATH/TO/MMSVGBench
 ```
 
-The evaluation code is available in the `metrics` directory.
+The evaluation code is available in the `metrics` directory, for more details about MMSVGBench, please check [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench/blob/main/README.md)
 
 
 ## 6. License
 OmniSVG is licensed under the [**Apache License 2.0**](https://www.apache.org/licenses/LICENSE-2.0), while MMSVG dataset is under [**Creative Commons Attribution Non Commercial Share Alike 4.0 License**](https://spdx.org/licenses/CC-BY-NC-SA-4.0). You can find the license files in the respective github and HuggingFace repositories.
 
 
-<!-- ##  🧩 Dataset - MMSVG-2M -->
 
 ## Citation
 
