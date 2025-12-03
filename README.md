@@ -210,7 +210,7 @@ huggingface-cli download OmniSVG/MMSVGBench --repo-type dataset --local-dir /PAT
 
 ### Benchmark Overview
 
-MMSVGBench is a **purely synthetic benchmark** where all prompts and images are generated using GPT models, ensuring the data is **unseen** during model training for fair generalization evaluation.
+MMSVGBench is a **purely synthetic benchmark** where all prompts and images are generated using GPT models, ensuring the data is **unseen** during model training for fair generalization evaluation. The generation procedure MMSVGBench's prompt is logged, for example the [text2svg prompt log](https://chatgpt.com/share/68f773e9-2814-8002-99ed-5e2980e9b9bf). 
 
 | Task | Complexity Level | Samples | Description |
 |------|------------------|---------|-------------|
@@ -220,9 +220,9 @@ MMSVGBench is a **purely synthetic benchmark** where all prompts and images are 
 | Image-to-SVG | Illustration | 150 | GPT-4o generated illustration images |
 
 **Key Advantages of Synthetic Design:**
-- ✅ True generalization test — models cannot have seen these samples during training
-- ✅ Controlled diversity — systematic coverage of styles and semantic categories  
-- ✅ Fairness — no model has unfair advantage from training data overlap
+- ✅ **True generalization test** — models cannot have seen these samples during training
+- ✅ **Controlled diversity** — systematic coverage of styles and semantic categories  
+- ✅ **Fairness** — no model has unfair advantage from training data overlap
 
 The evaluation code is available in the `metrics` directory. For more details about MMSVGBench construction and evaluation metrics, please check [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench/blob/main/README.md).
 
