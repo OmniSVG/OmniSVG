@@ -21,7 +21,7 @@
   - 🕚 **Time:** 11:00 AM – 2:00 PM PST
   - 📍 **Location:** Exhibit Hall C, D, E — **Poster #5512**
 - [2025/12/02] We have released the **OmniSVG1.1_8B** weights and updated **OmniSVG1.1_4B** model weights! Check out [OmniSVG1.1_8B](https://huggingface.co/OmniSVG/OmniSVG1.1_8B) and [OmniSVG1.1_4B](https://huggingface.co/OmniSVG/OmniSVG1.1_4B).
-- [2025/12/02] We have released **MMSVGBench** benchmark dataset and evaluation code! Check out [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench).
+- [2025/12/02] We have released **MMSVGBench** benchmark dataset and evaluation code! Check out [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench) and [Evaluation](https://github.com/OmniSVG/OmniSVG?tab=readme-ov-file#5-evaluation).
 - [2025/09/18] OmniSVG is accepted to **NeurIPS 2025**🔥! See you in San Diego!
 - [2025/07/22] 👋 We have released the Huggingface Demo. 🤗[Demo](https://huggingface.co/spaces/OmniSVG/OmniSVG-3B).
 - [2025/07/22] 👋 We have released the inference code and model weight of MMSVG-Icon and MMSVG-Illustration dataset. 🤗[Weight](https://huggingface.co/OmniSVG/OmniSVG).
