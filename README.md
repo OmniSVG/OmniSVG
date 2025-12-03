@@ -15,6 +15,10 @@
 </div>
 
 ## 🔥🔥🔥 News !!
+- [2025/12/04] 🎉 **OmniSVG @ NeurIPS 2025** — Come see our poster!
+  - 📅 **Date:** Thursday, December 4, 2025
+  - 🕚 **Time:** 11:00 AM – 2:00 PM PST
+  - 📍 **Location:** Exhibit Hall C, D, E — **Poster #5512**
 - [2025/12/02] We have released the **OmniSVG1.1_8B** weights and updated **OmniSVG1.1_4B** model weights! Check out [OmniSVG1.1_8B](https://huggingface.co/OmniSVG/OmniSVG1.1_8B) and [OmniSVG1.1_4B](https://huggingface.co/OmniSVG/OmniSVG1.1_4B).
 - [2025/12/02] We have released **MMSVGBench** benchmark dataset and evaluation code! Check out [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench).
 - [2025/09/18] OmniSVG is accepted to **NeurIPS 2025**🔥! See you in San Diego!
@@ -193,6 +197,7 @@ We provide an interactive generation interface using Gradio:
 </div>
 
 
+
 ## 5. Evaluation
 
 We provide **MMSVGBench** for standardized evaluation of SVG generation models.
@@ -202,7 +207,24 @@ We provide **MMSVGBench** for standardized evaluation of SVG generation models.
 huggingface-cli download OmniSVG/MMSVGBench --repo-type dataset --local-dir /PATH/TO/MMSVGBench
 ```
 
-The evaluation code is available in the `metrics` directory, for more details about MMSVGBench, please check [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench/blob/main/README.md)
+### Benchmark Overview
+
+MMSVGBench is a **purely synthetic benchmark** where all prompts and images are generated using GPT models, ensuring the data is **unseen** during model training for fair generalization evaluation.
+
+| Task | Complexity Level | Samples | Description |
+|------|------------------|---------|-------------|
+| Text-to-SVG | Icon | 150 | Simple icons (1-2 elements) |
+| Text-to-SVG | Illustration | 150 | Complex illustrations (1-3 interacting elements) |
+| Image-to-SVG | Icon | 150 | GPT-4o generated icon images |
+| Image-to-SVG | Illustration | 150 | GPT-4o generated illustration images |
+
+**Key Advantages of Synthetic Design:**
+- ✅ True generalization test — models cannot have seen these samples during training
+- ✅ Controlled diversity — systematic coverage of styles and semantic categories  
+- ✅ Fairness — no model has unfair advantage from training data overlap
+
+The evaluation code is available in the `metrics` directory. For more details about MMSVGBench construction and evaluation metrics, please check [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench/blob/main/README.md).
+
 
 
 ## 6. License
