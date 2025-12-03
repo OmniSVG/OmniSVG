@@ -42,8 +42,6 @@ If you are developing / using OmniSVG in your projects, or you want to contribut
 - [x] Model Weight of OmniSVG1.1_8B Release
 - [x] Model Weight of OmniSVG1.1_4B Release
 - [x] MMSVGBench Benchmark & Evaluation Code Release
-- [ ] MMSVG-Character Dataset Release
-- [ ] Model Weight of MMSVG-Character Dataset Release
 
 
 
