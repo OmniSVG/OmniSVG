@@ -15,6 +15,8 @@
 </div>
 
 ## 🔥🔥🔥 News !!
+- [2025/12/02] We have released the **OmniSVG1.1_8B** weights and updated **OmniSVG1.1_4B** model weights! Check out [OmniSVG1.1_8B](https://huggingface.co/OmniSVG/OmniSVG1.1_8B) and [OmniSVG1.1_4B](https://huggingface.co/OmniSVG/OmniSVG1.1_4B).
+- [2025/12/02] We have released **MMSVGBench** benchmark dataset and evaluation code! Check out [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench).
 - [2025/09/18] OmniSVG is accepted to **NeurIPS 2025**🔥! See you in San Diego!
 - [2025/07/22] 👋 We have released the Huggingface Demo. 🤗[Demo](https://huggingface.co/spaces/OmniSVG/OmniSVG-3B).
 - [2025/07/22] 👋 We have released the inference code and model weight of MMSVG-Icon and MMSVG-Illustration dataset. 🤗[Weight](https://huggingface.co/OmniSVG/OmniSVG).
@@ -37,7 +39,9 @@ If you are developing / using OmniSVG in your projects, or you want to contribut
 - [x] MMSVG-Icon and MMSVG-Illustration Dataset Release
 - [x] Inference Code & Model Weight of MMSVG-Icon and MMSVG-Illustration Dataset
 - [x] Online Demo (Gradio deployed on Huggingface)
-- [ ] Model Weight of OmniSVG-7B Release
+- [x] Model Weight of OmniSVG1.1_8B Release
+- [x] Model Weight of OmniSVG1.1_4B Release
+- [x] MMSVGBench Benchmark & Evaluation Code Release
 - [ ] MMSVG-Character Dataset Release
 - [ ] Model Weight of MMSVG-Character Dataset Release
 
@@ -51,7 +55,9 @@ If you are developing / using OmniSVG in your projects, or you want to contribut
 ## 2. Models Downloading
 | Model                       | Download link                   | Size       | Update date |                                                                                     
 |-----------------------------|-------------------------------|------------|------|
-| OmniSVG-3B| 🤗 [Huggingface](https://huggingface.co/OmniSVG/OmniSVG)    | 8.49 GB | 2025-07-22  | 
+| OmniSVG1.1_8B | [Huggingface](https://huggingface.co/OmniSVG/OmniSVG1.1_8B)    | 17.2 GB | 2025-12-02  |
+| OmniSVG1.1_4B | [Huggingface](https://huggingface.co/OmniSVG/OmniSVG1.1_4B)    | 7.69 GB | 2025-12-02  |
+| OmniSVG-3B | [Huggingface](https://huggingface.co/OmniSVG/OmniSVG)    | 8.49 GB | 2025-07-22  | 
 
 
 
@@ -106,34 +112,69 @@ pip install -r requirements.txt
 
 |                                                  | GPU Memory Usage | Time per 256/512/1024/2048/4096 tokens |
 | ------------------------------------------------ | ---------------- | ----------------- |
+| OmniSVG1.1_8B     | 26G              | 5.38/9.02/20.11/40.34/98.11 seconds       |
+| OmniSVG1.1_4B     | 17G              | 4.08/8.68/18.07/37.51/82.70 seconds       |
 | OmniSVG-3B     | 17G              | 4.08/8.68/18.07/37.51/82.70 seconds       |
+
 
 <font color="red">**Note: The inference time shown here is measured per OmniSVG SVG tokens, while the inference time reported in our paper is measured per XML code tokens for fair comparison with baseline methods.**</font> 
 
 ### Quick Start
 
 **Download Model Weights**
+
 First, install the Hugging Face CLI tool:
 ```bash
 pip install huggingface-hub
 ```
-  **Download the model from Hugging Face:**
-   ```bash
-   # Download to your directory
-   huggingface-cli download OmniSVG/OmniSVG --local-dir /PATH/TO/OmniSVG-3B
-   ```
- **Run Inference**
-   
-   Execute the following command to run inference:
-   ```bash
-   #image-to-svg
-   python inference.py --input_dir ./examples --output_dir ./output --task_type image-to-svg --weight_path /PATH/TO/OmniSVG-3B
-   ```
 
-   ```
-   #text-to-svg
-   python inference.py --input_dir ./examples.txt --output_dir ./output --task_type text-to-svg --weight_path /PATH/TO/OmniSVG-3B
-   ```
+**Download the model from Hugging Face:**
+```bash
+# Download OmniSVG1.1-8B
+huggingface-cli download OmniSVG/OmniSVG1.1_8B --local-dir /PATH/TO/OmniSVG1.1_8B
+
+# Download OmniSVG1.1-4B
+huggingface-cli download OmniSVG/OmniSVG1.1_4B --local-dir /PATH/TO/OmniSVG1.1_4B
+
+# Download OmniSVG-3B (legacy)
+huggingface-cli download OmniSVG/OmniSVG --local-dir /PATH/TO/OmniSVG-3B
+```
+
+### Text-to-SVG Generation
+
+**Basic usage - Generate SVG from txt file:**
+```bash
+python inference.py --task text-to-svg --input prompts.txt --output ./output_text --save-all-candidates
+```
+
+**Use 4B model:**
+```bash
+python inference.py --task text-to-svg --input prompts.txt --output ./output_text --model-size 4B --save-all-candidates
+```
+
+**Generate more candidates and save PNG:**
+```bash
+python inference.py --task text-to-svg --input prompts.txt --output ./output_text \
+    --num-candidates 8 --save-png --save-all-candidates
+```
+
+**Custom generation parameters:**
+```bash
+python inference.py --task text-to-svg --input prompts.txt --output ./output_text \
+    --temperature 0.5 --top-p 0.9 --top-k 50 --repetition-penalty 1.05
+```
+
+**Use local model:**
+```bash
+python inference.py --task text-to-svg --input prompts.txt --output ./output_text \
+    --model-path /path/to/qwen --weight-path /path/to/omnisvg
+```
+
+### Image-to-SVG Generation
+
+```bash
+python inference.py --task image-to-svg --input ./examples --output ./output_image --save-all-candidates
+```
 
 ### Interactive Demo
 
@@ -153,7 +194,20 @@ We provide an interactive generation interface using Gradio:
   <img src="assets/omnisvg-teaser.gif" alt="Demo GIF" height="256px" style="margin-right: 10px;" />
 </div>
 
-## 5. License
+
+## 5. Evaluation
+
+We provide **MMSVGBench** for standardized evaluation of SVG generation models.
+
+**Download MMSVGBench:**
+```bash
+huggingface-cli download OmniSVG/MMSVGBench --repo-type dataset --local-dir /PATH/TO/MMSVGBench
+```
+
+The evaluation code is available in the `metrics` directory.
+
+
+## 6. License
 OmniSVG is licensed under the [**Apache License 2.0**](https://www.apache.org/licenses/LICENSE-2.0), while MMSVG dataset is under [**Creative Commons Attribution Non Commercial Share Alike 4.0 License**](https://spdx.org/licenses/CC-BY-NC-SA-4.0). You can find the license files in the respective github and HuggingFace repositories.
 
 

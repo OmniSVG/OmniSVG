@@ -1,0 +1,116 @@
+# Default model size (can be overridden at runtime)
+default_model_size: "8B"
+
+# ==============================================================================
+# Model-specific configurations
+# ==============================================================================
+models:
+  "8B":
+    tokens:
+      num_mask_and_eom: 152066 
+      mask: 152065  
+      eom: 152066  
+      base_offset: 152064
+    coordinates:
+      pix_pad_offset: 152071
+      coord_pad_offset: 152071  
+    colors:
+      color_start_offset: 192075
+      color_end_offset: 196172
+    model:
+      vocab_size: 197000
+    huggingface:
+      #qwen_model: "Qwen/Qwen2.5-VL-7B-Instruct"
+      #omnisvg_model: "OmniSVG/OmniSVG1.1_8B"
+      qwen_model: "/mnt/jfs-test/Qwen2.5-VL-7B-Instruct"
+      omnisvg_model: "/mnt/jfs-test/OmniSVG_result/8B_1126/1688_bs_4/merge_slerp/merge_150_350_bf16"
+  "4B":
+    tokens:
+      num_mask_and_eom: 151938 
+      mask: 151937 
+      eom: 151938 
+      base_offset: 151936
+    coordinates:
+      pix_pad_offset: 151943
+      coord_pad_offset: 151943  
+    colors:
+      color_start_offset: 191946
+      color_end_offset: 196044
+    model:
+      vocab_size: 197000
+    huggingface:
+      qwen_model: "Qwen/Qwen2.5-VL-3B-Instruct"
+      omnisvg_model: "OmniSVG/OmniSVG1.1_4B"
+
+# ==============================================================================
+# Shared configurations (same for both models)
+# ==============================================================================
+tokens:
+  num_end_token: 5
+  causal_pad: 3
+  svg_end: 1
+
+coordinates:
+  bbox: 200
+
+colors:
+  cmd_fill: 40010
+  color_token_start: 40010
+  max_color_tokens: 4098
+  default_color_token: 40010
+  black_color_token: 40012  
+
+svg_commands:
+  move: -5
+  line: -4
+  curve: -3
+  arc: -2
+  close: -1
+
+arc:
+  param_offset: 44500  
+  param_range: 100
+
+model:
+  bos_token_id: 196998
+  eos_token_id: 196999
+  pad_token_id: 151643
+  max_length: 1536
+
+text:
+  max_length: 200
+
+image:
+  target_size: 448
+  render_size: 1024
+  background_threshold: 240
+  empty_threshold_illustration: 250
+  empty_threshold_icon: 252
+  edge_sample_ratio: 0.1
+  color_similarity_threshold: 30
+  min_edge_samples: 10
+
+task_configs:
+  text_to_svg_icon:
+    default_temperature: 0.5
+    default_top_p: 0.88
+    default_top_k: 50
+    default_repetition_penalty: 1.05
+  text_to_svg_illustration:
+    default_temperature: 0.6
+    default_top_p: 0.90
+    default_top_k: 60
+    default_repetition_penalty: 1.03
+  image_to_svg:
+    default_temperature: 0.3
+    default_top_p: 0.90
+    default_top_k: 50
+    default_repetition_penalty: 1.05
+
+generation:
+  default_num_candidates: 4
+  max_num_candidates: 8
+  extra_candidates_buffer: 4
+
+validation:
+  min_svg_length: 20
