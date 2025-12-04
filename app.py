@@ -745,6 +745,7 @@ def prepare_inputs(task_type, content):
         prompt_text = str(content).strip()
         
         instruction = f"""Generate an SVG illustration for: {prompt_text}
+        
 Requirements:
 - Create complete SVG path commands
 - Include proper coordinates and colors
