@@ -16,10 +16,6 @@
 </div>
 
 ## 🔥🔥🔥 News !!
-- [2025/12/04] 🎉 **OmniSVG @ NeurIPS 2025** — Come see our poster!
-  - 📅 **Date:** Thursday, December 4, 2025
-  - 🕚 **Time:** 11:00 AM – 2:00 PM PST
-  - 📍 **Location:** Exhibit Hall C, D, E — **Poster #5512**
 - [2025/12/02] We have released the **OmniSVG1.1_8B** weights and updated **OmniSVG1.1_4B** model weights! Check out [OmniSVG1.1_8B](https://huggingface.co/OmniSVG/OmniSVG1.1_8B) and [OmniSVG1.1_4B](https://huggingface.co/OmniSVG/OmniSVG1.1_4B).
 - [2025/12/02] We have released **MMSVGBench** benchmark dataset and evaluation code! Check out [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench) and [Evaluation](https://github.com/OmniSVG/OmniSVG?tab=readme-ov-file#5-evaluation).
 - [2025/09/18] OmniSVG is accepted to **NeurIPS 2025**🔥! See you in San Diego!
