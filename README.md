@@ -17,7 +17,7 @@
 </div>
 
 ## 🔥🔥🔥 News !!
-- [2025/12/31] 👋 We have released the training code of OmniSVG. 
+- [2025/12/31] 👋 We have released the training code of OmniSVG， Check out [OpenVGLab/OmniSVG-Train](https://github.com/OpenVGLab/OmniSVG-train)
 - [2025/12/22] We have updated **MMSVG-Icon** (264K→904K) and **MMSVG-Illustration** (66K→255K) datasets with enhanced captions and PNG previews! Check out [MMSVG-Icon](https://huggingface.co/datasets/OmniSVG/MMSVG-Icon) and [MMSVG-Illustration](https://huggingface.co/datasets/OmniSVG/MMSVG-Illustration).
 - [2025/12/02] We have released the **OmniSVG1.1_8B** weights and updated **OmniSVG1.1_4B** model weights! Check out [OmniSVG1.1_8B](https://huggingface.co/OmniSVG/OmniSVG1.1_8B) and [OmniSVG1.1_4B](https://huggingface.co/OmniSVG/OmniSVG1.1_4B).
 - [2025/12/02] We have released **MMSVGBench** benchmark dataset and evaluation code! Check out [MMSVGBench](https://huggingface.co/datasets/OmniSVG/MMSVGBench) and [Evaluation](https://github.com/OmniSVG/OmniSVG?tab=readme-ov-file#5-evaluation).
