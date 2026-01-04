@@ -11,7 +11,7 @@
  <a href='https://omnisvg.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://huggingface.co/OmniSVG/OmniSVG1.1_8B"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://huggingface.co/OmniSVG"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset%20-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://huggingface.co/datasets/OmniSVG/MMSVGBench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Benchmark-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://huggingface.co/datasets/OmniSVG/MMSVGBench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Bench-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://huggingface.co/spaces/OmniSVG/OmniSVG-3B"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Demo%20-HF-orange"></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href='https://github.com/OpenVGLab/OmniSVG-train'><img src='https://img.shields.io/badge/Training-Code-blue?logo=github'></a>
 </div>
